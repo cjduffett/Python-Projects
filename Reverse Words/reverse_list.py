@@ -10,7 +10,7 @@
 def tokenizer(string):
 
     # splits a string at whitespace and returns a list
-    strlist = list()
+    string_list = list()
 
     # skip leading whitespace
     it = 0
@@ -19,21 +19,21 @@ def tokenizer(string):
 
     last_token = it - 1
     
-    for i in range(it,len(string)):
+    for i in range(it, len(string)):
 
         if i == len(string) - 1:
-            strlist.append(string[last_token + 1:i + 1])
+            string_list.append(string[last_token + 1:i + 1])
 
         if string[i] == " ":
-            strlist.append(string[last_token + 1:i])
+            string_list.append(string[last_token + 1:i])
             last_token = i
 
-    return strlist
+    return string_list
 # tokenizer()
 
 def swap(l, a, b):
 
-    # swaps indeces a and b in list l
+    # swaps indices a and b in list l
     tmp = l[a]
     l[a] = l[b]
     l[b] = tmp
@@ -52,7 +52,7 @@ for string in string_tests:
     l = tokenizer(string)
     L = len(l)
 
-    for i in range(0, L/2): # integer division == floor
+    for i in range(0, L / 2):  # integer division == floor
 
         swap(l, i, L - i - 1)
 
